@@ -1,30 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Poppins:wght@200&display=swap");
 body {
-  margin: auto;
-  display: flex;
-  place-items: center;
-  max-width: 1000px;
+  width: 100%;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins";
 }
 
-h1 {
-  font-size: 3.2em;
+.drop-page h1 {
+  font-size: 25px;
   line-height: 1.1;
+  padding-bottom: 2rem;
+  margin-top: 5rem;
+  font-family: "Poppins";
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+@media screen and (max-width: 600px) {
+  .drop-page h1 {
+    font-size: 15px;
   }
 }
 
+.no-user {
+  text-align: center;
+}
+.no-user h1 {
+  font-size: 25px;
+  line-height: 1.1;
+  padding-bottom: 2rem;
+  margin-top: 5rem;
+  font-family: "Poppins";
+}
+.sign-btn,
+.login-btn {
+  padding: 7px;
+  width: 150px;
+  border: transparent;
+  border-radius: 5px;
+  font-family: "Poppins";
+}
+.sign-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 7px;
+}
+.sign-in_toggle {
+  border: transparent;
+  background: transparent;
+  float: right;
+  position: absolute;
+  bottom: 10%;
+  font-family: "Poppins";
+  right: 5%;
+}
+.input {
+  margin-bottom: 2rem;
+}
+.drop-page {
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  text-align: center;
+  padding-top: 2rem;
+  box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px -1px 23px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 7px;
+}
+@media screen and (max-width: 600px) {
+  .drop-page {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+.drop-icon {
+  font-size: 20px;
+}
+
+/* Image dropped */
+.image-holder {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.image-container {
+  margin: 8px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+.image-container img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .image-holder {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .image-holder {
+    grid-template-columns: auto auto;
+  }
+  .image-container {
+    margin: 8px;
+    width: 150px;
+    height: 150px;
+  }
+  .image-container img {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .image-container {
+    margin: 8px;
+    width: 120px;
+    height: 120px;
+  }
+  .image-container img {
+    height: 120px;
+  }
+}
+
+.log_in {
+  position: absolute;
+  right: 6%;
+  top: 5%;
+  text-decoration: none;
+  list-style: none;
+  background: #ccc;
+  color: #000;
+  padding: 10px;
+  width: 100px;
+  border-radius: 7px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+.drop-box {
+  border: 2px dashed #ccc;
+  border-radius: 100%;
+  max-width: 100px;
+  margin: auto;
+  padding: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* skeleton */
+
+.skeleton-loader {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.skeleton-container {
+  margin: 8px;
+  width: 200px;
+  text-align: center;
+}
+.skeleton {
+  width: 100%;
+  height: 200px;
+  background-color: #ebebeb;
+}
+
+@media screen and (max-width: 900px) {
+  .skeleton-loader {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skeleton-loader {
+    grid-template-columns: auto auto;
+  }
+  .skeleton-container {
+    width: 150px;
+  }
+  .skeleton {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .skeleton-loader {
+    grid-template-columns: auto auto;
+  }
+  .skeleton-container {
+    width: 120px;
+  }
+  .skeleton {
+    height: 120px;
+  }
+}
 .heartbeat {
   -webkit-animation: heartbeat 3s ease-in-out infinite both;
   animation: heartbeat 3s ease-in-out infinite both;

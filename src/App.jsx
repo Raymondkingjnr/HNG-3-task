@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import DragandDrop from "./DragandDrop";
-import ImageGrid from "./ImageGrid";
+import DragandDrop from "./pages/DragandDrop";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LogPage from "./pages/LogPage";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -24,11 +25,21 @@ function App() {
   };
   return (
     <>
-      <DragandDrop
-        handleDrop={handleDrop}
-        handleDragOver={handleDragOver}
-        images={images}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <DragandDrop
+                handleDrop={handleDrop}
+                handleDragOver={handleDragOver}
+                images={images}
+              />
+            }
+          />
+          <Route path="/log-in" element={<LogPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
