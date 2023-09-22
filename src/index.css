@@ -55,6 +55,13 @@ body {
   font-family: "Poppins";
   right: 5%;
 }
+
+@media screen and (max-width: 600px) {
+  .sign-in_toggle {
+    right: 1%;
+    font-size: 12px;
+  }
+}
 .input {
   margin-bottom: 2rem;
 }
