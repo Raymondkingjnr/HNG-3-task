@@ -32,6 +32,7 @@ const authSlice = createSlice({
     },
     logOutUser: (state) => {
       state.user = null;
+      removeLocalStorage();
       state.isLoading = false;
     },
   },
@@ -59,20 +60,17 @@ export const signIn = (email, password) => async (dispatch) => {
     });
 };
 
-export const signUp = (email, password, name) => async (dispatch) => {
+export const signUp = (email, password) => async (dispatch) => {
   //   dispatch(setLoading(true));
-  if (!email || !password || !name) {
+  if (!email || !password) {
     //   toast.error("incomplete form");
     return;
   }
-  createUserWithEmailAndPassword(firebaseAuth, email, password, name)
+  createUserWithEmailAndPassword(firebaseAuth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
       addUserLocalStorage(user);
       console.log(user);
-      return updateProfile(user, {
-        displayName: name,
-      });
     })
     .then(() => {
       // toast.success("User created successfully");

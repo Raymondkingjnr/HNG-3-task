@@ -9,7 +9,7 @@ import NoUser from "../components/NoUser";
 
 const DragandDrop = ({ handleDrop, handleDragOver, images }) => {
   const { user } = useSelector((state) => state.auth);
-  //const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <main className="drop-page">

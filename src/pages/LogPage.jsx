@@ -7,10 +7,10 @@ const LogPage = () => {
 
   return (
     <div className="sign-container">
-      {showPage ? <SignUp /> : <SignIn />}
+      {showPage ? <SignIn /> : <SignUp />}
 
       <button onClick={() => setShowPage(!showPage)} className="sign-in_toggle">
-        {showPage ? "Already have an Account?" : "Sign up"}
+        {showPage ? "" : ""}
       </button>
     </div>
   );

@@ -11,7 +11,6 @@ const SignUp = () => {
   const { user, isLoading, error } = useSelector((state) => state.auth);
 
   const initialState = {
-    name: "",
     email: "",
     password: "",
   };
@@ -29,7 +28,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(signUp(values.email, values.password, values.name));
+    dispatch(signUp(values.email, values.password));
   };
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const SignUp = () => {
   return (
     <div>
       <Form className="form">
-        <Form.Group className="mb-3" controlId="formGroupEmail">
+        {/* <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="name"
@@ -53,7 +52,7 @@ const SignUp = () => {
             onChange={handleChange}
             className="input"
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group className="mb-3" controlId="formGroupPassword">
           <Form.Label>Email</Form.Label>
